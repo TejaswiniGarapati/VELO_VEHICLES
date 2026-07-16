@@ -1,0 +1,115 @@
+/* Navbar - Themed */
+.navbar {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 30px var(--card-shadow);
+  border-bottom: 1px solid var(--nav-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* VELO - bright, bold, top-left */
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding: 0.5rem 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  background: var(--primary-glow);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-icon {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+  color: var(--text-main);
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--primary-glow);
+  transform: scale(1.1);
+}
+
+/* Logout - top-right, parallel to VELO */
+.nav-logout {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-left: auto;
+  background: var(--error-bg);
+  color: var(--error);
+  border: 1px solid var(--error-bg);
+}
+
+.nav-logout:hover {
+  background: var(--error-bg);
+  color: var(--error);
+  border-color: var(--error);
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+@media (max-width: 900px) {
+  .navbar-menu .nav-link:not(.nav-icon):not(.nav-logout) {
+    display: none;
+  }
+}

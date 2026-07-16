@@ -1,0 +1,473 @@
+/* =========================================
+   PAYMENT MODAL OVERLAY
+========================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+  padding: 1rem;
+}
+
+
+/* =========================================
+   PAYMENT MODAL BOX
+========================================= */
+
+.modal-box {
+  background: var(--card-bg);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 16px;
+
+  box-shadow: 0 8px 32px var(--card-shadow);
+
+  border: 1px solid var(--input-border);
+
+  padding: 2rem;
+
+  width: 100%;
+  max-width: 460px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.modal-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+  background: var(--card-bg);
+  border-radius: 3px;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+  background: var(--input-bg-hover);
+  border-radius: 3px;
+}
+
+
+/* =========================================
+   MODAL HEADER
+========================================= */
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h3 {
+  color: var(--text-main);
+
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+
+  font-size: 1.8rem;
+  line-height: 1;
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  padding: 0 0.5rem;
+
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: var(--error);
+}
+
+.modal-close:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* =========================================
+   PAYMENT METHOD TABS
+========================================= */
+
+.payment-modal-box .payment-method-tabs {
+  display: flex;
+
+  gap: 0.75rem;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 1rem;
+}
+
+.payment-modal-box .payment-tab {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--input-border);
+
+  background: var(--input-bg);
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.payment-modal-box .payment-tab input {
+  margin-right: 0.5rem;
+
+  width: auto;
+
+  accent-color: var(--primary);
+}
+
+.payment-modal-box .payment-tab:hover {
+  background: var(--input-bg-hover);
+
+  color: var(--text-main);
+}
+
+.payment-modal-box .payment-tab.active,
+.payment-modal-box .payment-tab:has(input:checked) {
+  background: var(--primary-glow);
+
+  border-color: rgba(96, 165, 250, 0.5);
+
+  color: var(--primary);
+}
+
+
+/* =========================================
+   PAYMENT SUB OPTIONS
+========================================= */
+
+.payment-sub-options {
+  margin-top: 1rem;
+
+  padding: 1.25rem;
+
+  background: var(--input-bg);
+
+  border: 1px solid var(--card-border);
+
+  border-radius: 12px;
+}
+
+
+/* =========================================
+   BANK SELECT
+========================================= */
+
+.payment-sub-options select {
+  width: 100%;
+
+  padding: 0.75rem;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--input-border);
+
+  background: var(--card-bg);
+
+  color: var(--text-main);
+}
+
+
+/* =========================================
+   CARD PAYMENT FIELDS
+========================================= */
+
+.payment-sub-options.card-fields input {
+  width: 100%;
+
+  margin-bottom: 0.75rem;
+
+  padding: 0.75rem;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--input-border);
+
+  background: var(--card-bg);
+
+  color: var(--text-main);
+}
+
+.payment-sub-options .card-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 0.75rem;
+}
+
+
+/* =========================================
+   UPI OPTIONS
+========================================= */
+
+.payment-sub-options .radio-option.small {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-right: 1.25rem;
+
+  font-size: 0.95rem;
+
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   CAPTCHA
+========================================= */
+
+.payment-modal-box .captcha-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 0.75rem;
+}
+
+.payment-modal-box .captcha-question {
+  min-width: 60px;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 8px;
+
+  border: 1px solid var(--input-border);
+
+  background: var(--input-bg);
+
+  color: var(--primary);
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   MODAL ACTION BUTTONS
+========================================= */
+
+.modal-actions {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 1.5rem;
+
+  justify-content: flex-end;
+}
+
+.modal-actions .btn {
+  min-width: 100px;
+}
+
+
+/* =========================================
+   PAYMENT SUCCESS SCREEN
+========================================= */
+
+.payment-success-state {
+  min-height: 240px;
+
+  padding: 2rem 1rem 2.5rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   GREEN SUCCESS TICK
+========================================= */
+
+.payment-success-icon {
+  width: 74px;
+  height: 74px;
+
+  margin: 0 auto 1.5rem;
+
+  border-radius: 50%;
+
+  background: rgba(34, 197, 94, 0.2);
+
+  color: #22c55e;
+
+  font-size: 3rem;
+  font-weight: 500;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  line-height: 1;
+
+  animation: paymentSuccessPop 0.4s ease;
+}
+
+
+/* =========================================
+   SUCCESS TITLE
+========================================= */
+
+.payment-success-title {
+  font-size: 1.5rem;
+
+  font-weight: 700;
+
+  color: var(--text-main);
+
+  margin: 0 0 1rem;
+}
+
+
+/* =========================================
+   SUCCESS SUB TEXT
+========================================= */
+
+.payment-success-sub {
+  font-size: 1rem;
+
+  font-weight: 400;
+
+  color: var(--text-muted);
+
+  margin: 0;
+}
+
+
+/* =========================================
+   SUCCESS TICK ANIMATION
+========================================= */
+
+@keyframes paymentSuccessPop {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.4);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 600px) {
+  .modal-box {
+    padding: 1.5rem;
+
+    max-width: 100%;
+  }
+
+  .payment-modal-box .payment-method-tabs {
+    flex-direction: column;
+  }
+
+  .payment-modal-box .payment-tab {
+    width: 100%;
+  }
+
+  .payment-sub-options .card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-modal-box .captcha-box {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+  }
+
+  .payment-success-state {
+    min-height: 220px;
+
+    padding: 1.5rem 0.5rem 2rem;
+  }
+
+  .payment-success-icon {
+    width: 68px;
+    height: 68px;
+
+    font-size: 2.7rem;
+  }
+
+  .payment-success-title {
+    font-size: 1.35rem;
+  }
+
+  .payment-success-sub {
+    font-size: 0.95rem;
+  }
+}

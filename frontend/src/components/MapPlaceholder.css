@@ -1,0 +1,42 @@
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--card-shadow);
+}
+
+.map-placeholder {
+  min-height: 350px;
+  background: var(--input-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.map-placeholder-content {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-muted);
+}
+
+.map-placeholder-icon {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.map-placeholder-hint {
+  font-size: 0.95rem;
+  margin-top: 0.75rem;
+  color: #64748b;
+}
+
+.map-placeholder-hint code {
+  background: var(--card-bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--input-border);
+  color: #93c5fd;
+}
