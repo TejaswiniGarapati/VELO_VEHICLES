@@ -1,0 +1,52 @@
+.logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.logistics-section {
+  max-width: 480px;
+}
+
+.logistics-section h3 {
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.logistics-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.logistics-booked {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background: var(--success-bg);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  color: var(--success);
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logistics-map-section {
+  margin-top: 2rem;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+}
+
+.logistics-map-section h3 {
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}

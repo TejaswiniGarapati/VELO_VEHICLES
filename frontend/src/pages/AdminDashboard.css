@@ -1,1 +1,165 @@
+/* Admin Dashboard - Dark Mode */
+.admin-page {
+  padding: 2.5rem 1rem;
+  min-height: calc(100vh - 60px);
+  background: var(--bg-gradient);
+}
 
+.admin-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.admin-tabs button {
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-muted);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-tabs button:hover {
+  background: var(--input-bg-hover);
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.admin-tabs button.active {
+  background: var(--primary-glow);
+  color: var(--primary);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.admin-content {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--card-shadow);
+  padding: 2rem;
+  overflow-x: auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.admin-card h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.admin-card h4 {
+  margin: 1.5rem 0 1rem;
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.admin-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--input-bg);
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+  background: var(--input-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+
+.admin-table th {
+  background: var(--card-bg);
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.admin-table tr:hover td {
+  background: var(--primary-glow);
+}
+
+.notif-list-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notif-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 80px 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--input-bg);
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  align-items: center;
+}
+
+.notif-row:hover {
+  background: var(--input-bg);
+  border-color: var(--primary-glow);
+}
+
+@media (max-width: 640px) {
+  .notif-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}

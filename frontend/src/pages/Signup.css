@@ -1,0 +1,224 @@
+/* Signup - Sleek Dark Mode */
+/* Full-page scroll: parent auth-page is flex-centered by default, which clips tall forms */
+.auth-page.signup-page {
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+}
+
+.auth-page.signup-page .signup-layout {
+  min-height: min-content;
+  flex-shrink: 0;
+}
+
+.signup-velo-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 2rem;
+  z-index: 10;
+}
+
+.signup-velo-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.3s ease;
+}
+
+.signup-velo-brand:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.signup-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.signup-form-panel {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 2rem 1rem 2rem 2rem;
+  max-height: none;
+  overflow-y: visible;
+}
+
+.signup-form-panel.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--card-shadow);
+  border: 1px solid var(--card-border);
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Custom scrollbar for panel */
+/* Page scroll uses browser default; optional thin scrollbar on Windows via color-scheme */
+.auth-page.signup-page {
+  scrollbar-gutter: stable;
+}
+
+.signup-form-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* Radio / circular selection */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.radio-group.circular-options .radio-option {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radio-group.circular-options .radio-option input {
+  margin-right: 0.5rem;
+  width: auto;
+  accent-color: var(--primary);
+}
+
+.radio-group.circular-options .radio-option:hover {
+  background: var(--input-bg-hover);
+  color: var(--text-main);
+}
+
+.radio-group.circular-options .radio-option:has(input:checked) {
+  background: var(--primary-glow);
+  border-color: rgba(96, 165, 250, 0.5);
+  color: var(--primary);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.hint-text {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.radio-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Right decorative panel */
+.signup-decor-panel {
+  background: linear-gradient(135deg, #1e3a8a 0%, var(--primary-hover) 50%, var(--primary) 100%);
+  border-radius: 0 20px 20px 0;
+  margin: 2rem 2rem 2rem 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px var(--primary-glow);
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.signup-decor-shapes {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.8;
+}
+
+.signup-decor-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 20%, var(--card-bg) 150%);
+}
+
+.signup-decor-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  transform: translateY(20px);
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.signup-decor-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px var(--card-shadow));
+}
+
+.signup-decor-content p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.signup-decor-tagline {
+  font-size: 1.05rem !important;
+  opacity: 0.85;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .signup-layout {
+    grid-template-columns: 1fr;
+    padding-top: 4rem;
+  }
+  .signup-form-panel {
+    margin: 1.5rem;
+    padding: 2rem;
+    max-height: none;
+  }
+  .signup-decor-panel {
+    display: none;
+  }
+  .radio-group.circular-options .radio-option {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
