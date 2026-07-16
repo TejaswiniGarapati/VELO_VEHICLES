@@ -1,0 +1,262 @@
+/* VELO - Global styles: Theme Variables */
+:root, [data-theme="light"] {
+  --bg-gradient: linear-gradient(135deg, #f8fcff 0%, #eef7ff 50%, #e0f2fe 100%);
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-glow: rgba(37, 99, 235, 0.3);
+  --secondary: rgba(255, 255, 255, 0.9);
+  --secondary-hover: #f1f5f9;
+  
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-bg-hover: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(255, 255, 255, 0.6);
+  --card-shadow: rgba(37, 99, 235, 0.1);
+  
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --input-bg-hover: rgba(241, 245, 249, 0.9);
+  --input-border: rgba(37, 99, 235, 0.2);
+  
+  --brand-gradient: linear-gradient(135deg, var(--primary-hover) 0%, #1d4ed8 100%);
+  --decor-gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 50%, #2563eb 100%);
+  
+  --success: #10b981;
+  --success-bg: var(--success-bg);
+  --error: var(--error);
+  --error-bg: var(--error-bg);
+  --warning: #f59e0b;
+  --warning-bg: var(--warning-bg);
+  
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.6);
+  
+  --scroll-track: rgba(226, 232, 240, 0.5);
+  --scroll-thumb: rgba(148, 163, 184, 0.8);
+}
+
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #0B0F19 0%, #1A2235 100%);
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --primary: var(--primary-hover);
+  --primary-hover: var(--primary);
+  --primary-glow: var(--primary-glow);
+  --secondary: var(--input-bg);
+  --secondary-hover: var(--input-bg-hover);
+  
+  --card-bg: var(--card-bg);
+  --card-bg-hover: var(--input-bg);
+  --card-border: var(--card-border);
+  --card-shadow: var(--card-shadow);
+  
+  --input-bg: var(--input-bg);
+  --input-bg-hover: var(--input-bg-hover);
+  --input-border: var(--input-border);
+  
+  --brand-gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  --decor-gradient: linear-gradient(135deg, #1e3a8a 0%, var(--primary-hover) 50%, var(--primary) 100%);
+  
+  --success: var(--success);
+  --success-bg: var(--success-bg);
+  --error: var(--error);
+  --error-bg: var(--error-bg);
+  --warning: var(--warning);
+  --warning-bg: var(--warning-bg);
+  
+  --nav-bg: rgba(11, 15, 25, 0.7);
+  --nav-border: var(--card-border);
+  
+  --scroll-track: var(--card-bg);
+  --scroll-thumb: var(--input-bg-hover);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--text-main);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Primary buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+  background: linear-gradient(135deg, #4f8df6 0%, #2b6bf0 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Glassmorphism cards */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--card-shadow);
+  border: 1px solid var(--card-border);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--card-shadow);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.card h3 {
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Form elements - sleek dark styling */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #64748b;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+  background: var(--card-bg);
+}
+
+.error-msg {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.success-msg {
+  color: var(--success);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
