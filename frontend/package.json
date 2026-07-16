@@ -2,7 +2,7 @@
   "name": "velo-frontend",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://tejaswinigarapati.github.io/VELO",
+  "homepage": ".",
   "description": "VELO - Vehicle E-Services Frontend (College Mini Project)",
   "dependencies": {
     "leaflet": "^1.9.4",
