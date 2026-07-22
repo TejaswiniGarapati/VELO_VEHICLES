@@ -22,11 +22,16 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://velo-vehicles.vercel.app",
-      "https://velo-vehicles-bp6r3r85g.vercel.app"
-    ],
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin === "http://localhost:3000" ||
+        origin.endsWith(".vercel.app")
+      ) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
