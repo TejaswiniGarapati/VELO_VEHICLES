@@ -29,7 +29,7 @@ export default function Tax() {
     setPaying(true);
     setMessage('');
     try {
-      await api.post('/payments/tax', { amount, paymentMethod });
+      await api.post('/api/payments/tax', { amount, paymentMethod });
       setMessage('Tax paid successfully!');
       setOverview((prev) => prev ? {
         ...prev,

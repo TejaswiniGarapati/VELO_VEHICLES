@@ -60,7 +60,7 @@ export default function Checkup() {
     setMessage('');
     setSlotStatus(null);
     try {
-      await api.post('/payments/checkup', {
+      await api.post('/api/payments/checkup', {
         amount: paymentDetails.amount,
         paymentMethod: paymentDetails.paymentMethod,
         slotDate: effectiveSlotDate,

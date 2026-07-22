@@ -117,7 +117,7 @@ export default function Fuel() {
     setMessage('');
 
     try {
-      await api.post('/payments/fuel', {
+      await api.post('/api/payments/fuel', {
         amount,
         paymentMethod,
         vehicleId: vehicle._id,

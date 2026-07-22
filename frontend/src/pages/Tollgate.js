@@ -125,7 +125,7 @@ export default function Tollgate() {
     setMessage('');
 
     try {
-      await api.post('/payments/tollgate', {
+      await api.post('/api/payments/tollgate', {
         amount: paymentDetails.amount,
         paymentMethod: paymentDetails.paymentMethod,
         vehicleId: vehicle._id,

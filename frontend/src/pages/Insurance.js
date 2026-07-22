@@ -71,7 +71,7 @@ export default function Insurance() {
     setMessage("");
 
     try {
-      await api.post("/payments/insurance", {
+      await api.post("/api/payments/insurance", {
         amount: paymentDetails.amount,
         paymentMethod: paymentDetails.paymentMethod,
         vehicleType: renewVehicleType,

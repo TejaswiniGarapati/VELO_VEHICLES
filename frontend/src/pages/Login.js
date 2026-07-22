@@ -29,7 +29,7 @@ export default function Login() {
     }
     setLoading(true);
     try {
-      const res = await api.post('/auth/login', { vehicleNumber: vehicleNumber.trim().toUpperCase(), password });
+      const res = await api.post('/api/auth/login', { vehicleNumber: vehicleNumber.trim().toUpperCase(), password });
       login(res.token, res.user);
       navigate(from, { replace: true });
     } catch (err) {

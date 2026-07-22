@@ -67,7 +67,7 @@ export default function Challan() {
     setMessage('');
     setPaymentResult(null);
     try {
-      await api.post('/payments/challan', {
+      await api.post('/api/payments/challan', {
         amount: paymentDetails.amount,
         paymentMethod: paymentDetails.paymentMethod,
         description: selectedChallan?.description || 'E-Challan',

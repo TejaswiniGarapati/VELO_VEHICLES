@@ -24,7 +24,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://velo-vehicles.vercel.app"
+      "https://velo-vehicles.vercel.app",
+      "https://velo-vehicles-bp6r3r85g.vercel.app"
     ],
     credentials: true,
   })
