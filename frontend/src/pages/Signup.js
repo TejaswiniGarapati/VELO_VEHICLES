@@ -118,7 +118,7 @@ export default function Signup() {
         logisticsAvailable: transportType === 'Goods Carrier' ? logisticsAvailable === 'Yes' : false,
       };
 
-      const res = await api.post('/auth/signup', payload);
+      const res = await api.post('/api/auth/signup', payload);
       login(res.token, res.user);
       navigate('/', { replace: true });
     } catch (err) {
